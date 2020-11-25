@@ -33,16 +33,18 @@ public class DiceRoller {
 		Scanner console = new Scanner(System.in);
 		int diceType = selectDiceType(console);
 		int diceQuantity = diceQuantity(console);
+		int rollModifier = rollModifier(console);
 		int how2Roll = how2Roll(console);
 		int targetNumber = targetNumber(console);
-		int how2ReadTargetNumber = how2ReadTargetNumber(console);
-		//int diceRoll = diceRoll(int diceType, int diceQuantity,
+		int how2CompareNumbers = how2CompareNumbers(console);
+		//diceRoll = diceRoll(int diceType, int diceQuantity,
 				//int how2Roll, int targetNumber, int how2ReadTargetNumber);
 		//boolean rollAgain = rollAgain(console);
 		//boolean useSameTarget = useSameTarget(console);
 		//boolean exitDiceRoller = exitDiceRoller(console);
 		System.out.println("WIP testing results: " + diceType + " sided die.");
 		System.out.println("Roll " + diceQuantity + " of them.");
+		System.out.println("The modifier is " + rollModifier + ".");
 	}
 	public static void giveDiceRollerIntro() {
 		System.out.println("This is a system-agnostic dice roller.");
@@ -57,6 +59,11 @@ public class DiceRoller {
 		int diceQuantity = console.nextInt();
 		return diceQuantity;
 	}
+	public static int rollModifier(Scanner console) {
+		System.out.println("Enter any modifiers. ");
+		int rollModifier = console.nextInt();
+		return rollModifier;
+	}
 	public static int how2Roll(Scanner console) {
 		System.out.println("How should they be read? Enter \"1\" for");
 		System.out.println("the highest value; \"2\" for the lowest");
@@ -70,7 +77,7 @@ public class DiceRoller {
 		int targetNumber = console.nextInt();
 		return targetNumber;
 	}
-	public static int how2ReadTargetNumber (Scanner console) {
+	public static int how2CompareNumbers (Scanner console) {
 		System.out.println("How should the roll be compared to the");
 		System.out.println("target number? Enter \"1\" for greater than");
 		System.out.println("or equal to; enter \"2\" for greater than;");
@@ -79,4 +86,24 @@ public class DiceRoller {
 		int how2ReadTargetNumber = console.nextInt();
 		return how2ReadTargetNumber;
 	}
+	public static void diceRoll(int diceType, int diceQuantity,
+				int how2Roll, int targetNumber, int how2ReadTargetNumber);
+		Random roll = new Random();
+		int result = null;
+		if (how2Roll == 1) {
+			int result = roll.nextInt(diceType)+1+rollModifier;
+			if (result >= targetNumber) {
+				System.out.println("Success, roll is " + result + ".");
+			} else {
+				System.out.println("Failed, roll is " + result + ".");
+			}
+		} else if (how2Roll == 2) {
+			int result = roll.nextInt(diceType)+1+rollModifier;
+			if (result > targetNumber) {
+				System.out.println("Success, roll is " + result + ".");
+			} else {
+				System.out.println("Failed, roll is " + result + ".");
+			}
+		} else if (how2Roll == 2) {
+			
 }
