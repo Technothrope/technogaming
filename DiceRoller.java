@@ -34,13 +34,15 @@ public class DiceRoller {
 		int diceType = selectDiceType(console);
 		int diceQuantity = diceQuantity(console);
 		int how2Roll = how2Roll(console);
-		//int targetNumber = targetNumber(console);
-		//int how2ReadTargetNumber = how2ReadTargetNumber(console);
+		int targetNumber = targetNumber(console);
+		int how2ReadTargetNumber = how2ReadTargetNumber(console);
 		//int diceRoll = diceRoll(int diceType, int diceQuantity,
 				//int how2Roll, int targetNumber, int how2ReadTargetNumber);
 		//boolean rollAgain = rollAgain(console);
 		//boolean useSameTarget = useSameTarget(console);
 		//boolean exitDiceRoller = exitDiceRoller(console);
+		System.out.println("WIP testing results: " + diceType + " sided die.");
+		System.out.println("Roll " + diceQuantity + " of them.");
 	}
 	public static void giveDiceRollerIntro() {
 		System.out.println("This is a system-agnostic dice roller.");
@@ -62,5 +64,19 @@ public class DiceRoller {
 		System.out.println("for quantities of a target number rolled.");
 		int how2Roll = console.nextInt();
 		return how2Roll;
+	}
+	public static int targetNumber (Scanner console) {
+		System.out.println("What is the target number? ");
+		int targetNumber = console.nextInt();
+		return targetNumber;
+	}
+	public static int how2ReadTargetNumber (Scanner console) {
+		System.out.println("How should the roll be compared to the");
+		System.out.println("target number? Enter \"1\" for greater than");
+		System.out.println("or equal to; enter \"2\" for greater than;");
+		System.out.println("enter \"3\" for less than or equal to; or");
+		System.out.println("enter \"4\" for less than.");
+		int how2ReadTargetNumber = console.nextInt();
+		return how2ReadTargetNumber;
 	}
 }
