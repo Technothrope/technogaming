@@ -33,7 +33,7 @@ public class DiceRoller {
 		Scanner console = new Scanner(System.in);
 		int diceType = selectDiceType(console);
 		int diceQuantity = diceQuantity(console);
-		char how2Roll = how2Roll(console);
+		int how2Roll = how2Roll(console);
 	}
 	public static void giveDiceRollerIntro() {
 		System.out.println("This is a system-agnostic dice roller.");
@@ -48,12 +48,12 @@ public class DiceRoller {
 		int diceQuantity = console.nextInt();
 		return diceQuantity;
 	}
-	public static char how2Roll(Scanner console) {
-		System.out.println("How should they be read? Enter \"A\" for");
-		System.out.println("the highest value; \"B\" for the lowest");
-		System.out.println("value; \"C\" for sum the values; or \"D\"");
+	public static int how2Roll(Scanner console) {
+		System.out.println("How should they be read? Enter \"1\" for");
+		System.out.println("the highest value; \"2\" for the lowest");
+		System.out.println("value; \"3\" for sum the values; or \"4\"");
 		System.out.println("for quantities of a target number rolled.");
-		char how2Roll = console.nextChar();
+		int how2Roll = console.nextInt();
 		return how2Roll;
 	}
 }
