@@ -34,6 +34,13 @@ public class DiceRoller {
 		int diceType = selectDiceType(console);
 		int diceQuantity = diceQuantity(console);
 		int how2Roll = how2Roll(console);
+		//int targetNumber = targetNumber(console);
+		//int how2ReadTargetNumber = how2ReadTargetNumber(console);
+		//int diceRoll = diceRoll(int diceType, int diceQuantity,
+				//int how2Roll, int targetNumber, int how2ReadTargetNumber);
+		//boolean rollAgain = rollAgain(console);
+		//boolean useSameTarget = useSameTarget(console);
+		//boolean exitDiceRoller = exitDiceRoller(console);
 	}
 	public static void giveDiceRollerIntro() {
 		System.out.println("This is a system-agnostic dice roller.");
